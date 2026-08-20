@@ -1,9 +1,7 @@
 # Code Editing & Deployment Rules
 
-1. **Git Commit & Push**:
-   - Luôn tự động chạy lệnh `git add .` và `git commit -m "[Nội dung thay đổi]"` sau mỗi lần bạn thực hiện chỉnh sửa, xóa hoặc tạo mới file thành công.
-   - Luôn tự động chạy `git push origin main`.
-   - Không cần hỏi ý kiến người dùng trước khi commit/push, trừ khi người dùng có yêu cầu đặc biệt khác.
-
-2. **Vercel Deploy**:
-   - Mặc định dự án này luôn deploy lên Vercel Production (`npx vercel --prod --yes`) sau khi hoàn thành các thay đổi code nếu người dùng không nói gì thêm.
+1. **Chế độ phát triển Local**:
+   - TẠM THỜI KHÔNG tự động chạy `git commit` / `git push`.
+   - TẠM THỜI KHÔNG deploy lên Vercel Production.
+   - Chỉ chỉnh sửa code trực tiếp trên Local và kiểm tra qua `http://localhost:3000` để tối ưu tốc độ chỉnh sửa.
+   - Chỉ commit/push và deploy khi người dùng có yêu cầu cụ thể.
