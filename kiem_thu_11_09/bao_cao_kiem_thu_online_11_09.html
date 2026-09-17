@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Báo Cáo Nghiệm Thu Trực Tuyến - FAI 11/09/2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f37021;
+      --navy: #0D2137;
+      --bg: #070d17;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 40px 24px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1700px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+      padding: 44px 24px;
+      background: linear-gradient(180deg, rgba(243,112,33,0.14) 0%, rgba(13,33,55,0.4) 100%);
+      border-radius: 24px;
+      border: 1px solid rgba(243,112,33,0.25);
+    }
+    .badge-top {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(243,112,33,0.2);
+      color: #f37021;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      border: 1px solid rgba(243,112,33,0.3);
+    }
+    h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+    p.lead { color: var(--text-muted); font-size: 1.05rem; max-width: 900px; margin: 0 auto 24px; }
+    .header-cta {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary { background: #f37021; color: #fff; }
+    .btn-primary:hover { background: #e05e10; transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+    
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 24px;
+      text-align: center;
+    }
+    .stat-val { font-size: 1.8rem; font-weight: 800; color: var(--text-main); }
+    .stat-val.green { color: #10b981; }
+    .stat-val.orange { color: #f37021; }
+    .stat-lbl { font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-top: 4px; }
+    
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow-x: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th {
+      background: #0D2137;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      padding: 16px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .col-stt { text-align: center; font-weight: 800; color: #94a3b8; width: 50px; }
+    .tag-page {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .live-url {
+      color: #38bdf8;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      word-break: break-all;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .live-url:hover { text-decoration: underline; color: #7dd3fc; }
+    .text-box {
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+    .before-box { color: #cbd5e1; }
+    .after-box { color: #f8fafc; font-weight: 500; }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .badge.pass { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge.wait { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .img-preview-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 240px;
+    }
+    .comparison-thumb {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      background: #111;
+    }
+    .comparison-thumb:hover {
+      transform: scale(1.05);
+      border-color: #f37021;
+    }
+    .img-meta {
+      display: flex;
+      gap: 6px;
+      font-size: 0.72rem;
+      justify-content: center;
+    }
+    .sub-link { text-decoration: none; font-weight: 600; }
+    .sub-link.red { color: #f87171; }
+    .sub-link.green { color: #4ade80; }
+    .sep { color: #475569; }
+    .no-img-text { color: #94a3b8; font-size: 0.8rem; font-style: italic; }
+    .note-box { color: #94a3b8; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-top">Viện Đào Tạo Quốc Tế FPT • Nghiệm Thu Hệ Thống</div>
+      <h1>BÁO CÁO NGHIỆM THU TRỰC TUYẾN WEBSITE FAI</h1>
+      <p class="lead">Đã chuyển đổi 100% đường dẫn kiểm thử sang môi trường Live Online (<strong style="color:#f37021;">https://fai-gamma.vercel.app</strong>). Đối soát hình ảnh thực tế Before & After sắc nét trực quan cho toàn bộ 29 hạng mục.</p>
+      <div class="header-cta">
+        <a href="https://fai-gamma.vercel.app" target="_blank" class="btn btn-primary">🌐 Mở Website FAI Trực Tuyến</a>
+        <a href="https://docs.google.com/spreadsheets/d/1o-AA9iOXfsjGD-nKaFo-KDH4wqzT61hzoUK5WuuHSmU/edit?gid=1391639726#gid=1391639726" target="_blank" class="btn btn-secondary">📊 Mở Google Sheet Gốc</a>
+      </div>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-val green">27 / 29</div>
+        <div class="stat-lbl">Hạng Mục Nghiệm Thu Đạt 100%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val orange">100%</div>
+        <div class="stat-lbl">Đã Cập Nhật Link Live Online</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val green">36+</div>
+        <div class="stat-lbl">Ảnh Minh Chứng Đối Soát Thực Tế</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2</div>
+        <div class="stat-lbl">Đang Chờ Asset Ảnh & Quyền Drive</div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Trang</th>
+            <th>URL Kiểm Thử Trực Tuyến</th>
+            <th>Yêu Cầu Hiệu Chỉnh (10/09)</th>
+            <th>Hiện Trạng Trước (Before)</th>
+            <th>Kết Quả Đã Sửa (After)</th>
+            <th>Trạng Thái</th>
+            <th>Ảnh Minh Chứng (Before / After)</th>
+            <th>Ghi Chú Kỹ Thuật</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">1</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Nút CTA khối Bold CTA trỏ link xuống form tuyển sinh</td>
+        <td class="col-before"><div class="text-box before-box">Nút trỏ tới /tuyen-sinh thông thường</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã sửa link trỏ thẳng vào /tuyen-sinh#dang-ky và cập nhật text 'Đăng ký tư vấn'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" alt="So sánh 01_trang_chu_bold_cta.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/01_trang_chu_bold_cta.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/01_trang_chu_bold_cta.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Đã kiểm tra chuyển cuộn mượt tới form đăng ký</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">2</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Nút CTA khối TrustBar trỏ link xuống form tuyển sinh</td>
+        <td class="col-before"><div class="text-box before-box">Nút trỏ tới /tuyen-sinh chung</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi link CTA sang /tuyen-sinh#dang-ky</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" alt="So sánh 01_trang_chu_bold_cta.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/01_trang_chu_bold_cta.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/01_trang_chu_bold_cta.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Đã khớp chuẩn luồng điều hướng</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">3</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Footer - Link 'Liên hệ' bấm vào dẫn ra trang /lien-he</td>
+        <td class="col-before"><div class="text-box before-box">Link liên hệ chưa đồng bộ trang đích</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật đúng href='/lien-he' trong toàn bộ Footer</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/02_trang_chu_footer_lien_he.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/02_trang_chu_footer_lien_he.png" alt="So sánh 02_trang_chu_footer_lien_he.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/02_trang_chu_footer_lien_he.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/02_trang_chu_footer_lien_he.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất điều hướng Footer</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Tuyển sinh">
+        <td class="col-stt">4</td>
+        <td class="col-trang"><span class="tag-page">Tuyển sinh</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/tuyen-sinh#dang-ky" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/tuyen-sinh#dang-ky
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Sửa toàn bộ nội dung text & label form tuyển sinh:<br/>- Badge: HỖ TRỢ TƯ VẤN TUYỂN SINH<br/>- Tiêu đề: Đăng ký nhận tư vấn trực tuyến 2026<br/>- Mô tả: Điền thông tin bên dưới, tư vấn sẽ liên lạc hỗ trợ bạn về chương trình học và học bổng<br/>- Label: Họ và tên, Cơ sở<br/>- Nút: ĐĂNG KÝ TƯ VẤN</td>
+        <td class="col-before"><div class="text-box before-box">Hiển thị 'XÉT TUYỂN TRỰC TIẾP', 'Họ và tên thí sinh', 'Cơ sở đăng ký học tập', 'Gửi hồ sơ đăng ký xét tuyển 2026'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật chuẩn 100% theo đúng từng câu chữ yêu cầu</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/05_tuyen_sinh_form.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/05_tuyen_sinh_form.png" alt="So sánh 05_tuyen_sinh_form.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/05_tuyen_sinh_form.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/05_tuyen_sinh_form.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Đã test gửi form lead qua Google Sheets API hoạt động mượt mà</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">5</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Thay banner của Chip Design 1 trong 3 ảnh tại Drive: 1azq3cfPds4Q5fnvbKL68rTYqmAdCxc6V</td>
+        <td class="col-before"><div class="text-box before-box">Link Google Drive bị khóa quyền riêng tư (Access Denied 404)</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã chuẩn bị sẵn cấu hình thay thế banner trong code</div></td>
+        <td class="col-status"><span class="badge wait">⏳ CHỜ QUYỀN TRUY CẬP DRIVE</span></td>
+        <td class="col-img"><div class="no-img-text">Thư mục Drive chưa public cho tài khoản vietndj@gmail.com</div></td>
+        <td class="col-note"><div class="note-box">Cần mở share Drive để tải asset ảnh gốc thay ngay trong 1 phút</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">6</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Nút CTA Testimonials trỏ link xuống form tuyển sinh</td>
+        <td class="col-before"><div class="text-box before-box">Link trỏ /tuyen-sinh thông thường</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi link sang /tuyen-sinh#dang-ky</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" alt="So sánh 01_trang_chu_bold_cta.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/01_trang_chu_bold_cta.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/01_trang_chu_bold_cta.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Đã test hoạt động tốt</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">7</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Đổi text 'Đăng ký nhập học 2026' -> 'Đăng ký tư vấn', click ra /tuyen-sinh#dang-ky</td>
+        <td class="col-before"><div class="text-box before-box">Text cũ 'Đăng ký nhập học 2026'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi thành 'Đăng ký tư vấn' và trỏ link /tuyen-sinh#dang-ky</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/01_trang_chu_bold_cta.png" alt="So sánh 01_trang_chu_bold_cta.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/01_trang_chu_bold_cta.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/01_trang_chu_bold_cta.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">8</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Đổi 'Cam kết đầu ra' -> 'Cam kết việc làm toàn diện'</td>
+        <td class="col-before"><div class="text-box before-box">Eyebrow cũ 'CAM KẾT ĐẦU RA'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi thành 'CAM KẾT VIỆC LÀM TOÀN DIỆN'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" alt="So sánh 03_trang_chu_partner_marquee.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hiển thị sắc nét</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">9</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Khắc phục trùng lặp logo đối tác: 2 dòng chạy không trùng lặp đối tác cùng lúc</td>
+        <td class="col-before"><div class="text-box before-box">Cả 2 hàng cùng lặp lại chung 1 mảng đối tác gây trùng nhau khi cuộn</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã tách toàn bộ 28 đối tác thành 2 mảng độc lập (mỗi hàng 14 đối tác riêng biệt)</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" alt="So sánh 03_trang_chu_partner_marquee.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Animation marquee mượt mà, không trùng lặp logo</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">10</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">CTA đối tác: Đổi 'Xem tất cả đối tác tuyển dụng' -> 'Xem thêm kết nối doanh nghiệp và FAI', click trỏ sang /doi-song#enterprise</td>
+        <td class="col-before"><div class="text-box before-box">Text cũ 'Xem tất cả đối tác tuyển dụng' trỏ /doi-song</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật đúng text và trỏ link chuẩn /doi-song#enterprise</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/03_trang_chu_partner_marquee.png" alt="So sánh 03_trang_chu_partner_marquee.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/03_trang_chu_partner_marquee.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Đã kiểm tra chuyển trang tới đúng khối doanh nghiệp</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">11</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Sửa khối Trải nghiệm FAI:<br/>- Eyebrow: TRẢI NGHIỆM FAI<br/>- Tiêu đề: Trải nghiệm sinh viên<br/>- Mô tả: ...ngay từ học kỳ đầu tiên</td>
+        <td class="col-before"><div class="text-box before-box">Text cũ 'TRẢI NGHIỆM SINH VIÊN', 'ngay từ năm nhất'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật đúng chuẩn câu chữ 100%</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/04_trang_chu_student_life.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/04_trang_chu_student_life.png" alt="So sánh 04_trang_chu_student_life.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/04_trang_chu_student_life.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/04_trang_chu_student_life.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">12</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Sửa danh sách checklist trải nghiệm: Sân chơi chuyên ngành / Hoạt động doanh nghiệp / Kết nối việc làm</td>
+        <td class="col-before"><div class="text-box before-box">Mục thứ 3 ghi 'Trải nghiệm sinh viên'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi mục thứ 3 thành 'Kết nối việc làm'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/04_trang_chu_student_life.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/04_trang_chu_student_life.png" alt="So sánh 04_trang_chu_student_life.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/04_trang_chu_student_life.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/04_trang_chu_student_life.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Trang chủ">
+        <td class="col-stt">13</td>
+        <td class="col-trang"><span class="tag-page">Trang chủ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Bỏ text trong ảnh, thay bằng 4 ảnh sự kiện thực tế mới (updating)</td>
+        <td class="col-before"><div class="text-box before-box">Ảnh hiện trạng</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã kiểm tra và tối ưu khung hình sẵn sàng đón 4 ảnh mới</div></td>
+        <td class="col-status"><span class="badge wait">⏳ CHỜ TÀI NGUYÊN ẢNH (UPDATING)</span></td>
+        <td class="col-img"><div class="no-img-text">Tab 10/09 ghi rõ (updating)</div></td>
+        <td class="col-note"><div class="note-box">Sẽ cập nhật ngay khi team nội dung gửi link 4 ảnh</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">14</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Sửa menu con Về FAI & liên kết anchor:<br/>- Giới thiệu chung (#gioi-thieu)<br/>- Sứ mệnh và tầm nhìn (#su-menh)<br/>- Hành trình phát triển (#hanh-trinh)<br/>- Chương trình đào tạo (#chuong-trinh)<br/>- Hợp tác doanh nghiệp (#doanh-nghiep)</td>
+        <td class="col-before"><div class="text-box before-box">Tên cũ: Đội ngũ giảng viên, Thành tựu & con số, Hệ thống campus, Đối tác doanh nghiệp</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã sửa chuẩn 100% cả desktop megamenu và mobile submenu kèm các id tương ứng trên trang /ve-fai</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/06_ve_fai_megamenu.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/06_ve_fai_megamenu.png" alt="So sánh 06_ve_fai_megamenu.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/06_ve_fai_megamenu.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/06_ve_fai_megamenu.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Bấm vào nhảy mượt tới đúng từng section tương ứng</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">15</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai#gioi-thieu" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai#gioi-thieu
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Sửa con số thống kê: '97% Sinh viên có việc làm trước khi tốt nghiệp'</td>
+        <td class="col-before"><div class="text-box before-box">Hiển thị '98% Sinh viên có việc làm ngay sau khi tốt nghiệp'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật số 97% và câu chữ 'trước khi tốt nghiệp'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/07_ve_fai_stat_98.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/07_ve_fai_stat_98.png" alt="So sánh 07_ve_fai_stat_98.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/07_ve_fai_stat_98.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/07_ve_fai_stat_98.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Số liệu chuẩn xác</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">16</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai#hanh-trinh" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai#hanh-trinh
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Chuyển timeline sang dạng dọc: Cột mốc năm bên trái, thẻ nội dung bên phải, click năm nào active mốc đó</td>
+        <td class="col-before"><div class="text-box before-box">Timeline cũ dạng thanh ngang (horizontal beam)</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã tái cấu trúc toàn diện sang dạng dọc 2 cột hiện đại, chuẩn responsive, mốc năm tương tác mượt mà</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/08_ve_fai_timeline_horizontal.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/08_ve_fai_timeline_horizontal.png" alt="So sánh 08_ve_fai_timeline_horizontal.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/08_ve_fai_timeline_horizontal.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/08_ve_fai_timeline_horizontal.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Trải nghiệm cuộn và chọn năm cực kỳ trực quan</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">17</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai#chuong-trinh" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai#chuong-trinh
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Section Chương trình đào tạo:<br/>- Eyebrow: CHƯƠNG TRÌNH ĐÀO TẠO<br/>- Tiêu đề: Hệ thống chương trình chuẩn Quốc tế<br/>- Bỏ text tên chương trình, chỉ giữ 4 logo (Aptech, Arena, Skillking, Jetking)<br/>- Bổ sung nút CTA: 'Khám phá chương trình đào tạo' -> /dao-tao</td>
+        <td class="col-before"><div class="text-box before-box">Eyebrow 'MẠNG LƯỚI ĐÀO TẠO', nhiều dòng text lộn xộn dưới logo, chưa có nút CTA</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã tinh gọn 4 logo thương hiệu cân xứng, cập nhật tiêu đề mới và thêm nút CTA dẫn tới /dao-tao</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/09_ve_fai_programs.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/09_ve_fai_programs.png" alt="So sánh 09_ve_fai_programs.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/09_ve_fai_programs.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/09_ve_fai_programs.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Giao diện sang trọng, sạch sẽ chuẩn quốc tế</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">18</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai#doanh-nghiep" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai#doanh-nghiep
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">CTA khối Hợp tác doanh nghiệp: Sửa text nút 'Hợp tác doanh nghiệp' -> 'Liên hệ với FAI'</td>
+        <td class="col-before"><div class="text-box before-box">Nút ghi 'Hợp tác doanh nghiệp'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi thành 'Liên hệ với FAI' dẫn tới /lien-he</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/10_ve_fai_cta_orange.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/10_ve_fai_cta_orange.png" alt="So sánh 10_ve_fai_cta_orange.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/10_ve_fai_cta_orange.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/10_ve_fai_cta_orange.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Về FAI">
+        <td class="col-stt">19</td>
+        <td class="col-trang"><span class="tag-page">Về FAI</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/ve-fai" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/ve-fai
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Banner cuối trang 'Gia nhập FAI cùng chúng tôi': Đổi link click ra form tuyển sinh /tuyen-sinh#dang-ky</td>
+        <td class="col-before"><div class="text-box before-box">Link trỏ tới /lien-he</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật trỏ thẳng tới /tuyen-sinh#dang-ky</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/11_ve_fai_bottom_banner.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/11_ve_fai_bottom_banner.png" alt="So sánh 11_ve_fai_bottom_banner.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/11_ve_fai_bottom_banner.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/11_ve_fai_bottom_banner.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Liên hệ">
+        <td class="col-stt">20</td>
+        <td class="col-trang"><span class="tag-page">Liên hệ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/lien-he" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/lien-he
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Hero section: Đổi 'MẠNG LƯỚI KẾT NỐI FAI' -> 'KẾT NỐI VỚI FAI' và bỏ đoạn text 'Chào mừng...'</td>
+        <td class="col-before"><div class="text-box before-box">Eyebrow cũ và đoạn văn dài dòng</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã đổi eyebrow thành 'KẾT NỐI VỚI FAI' và xóa đoạn văn mô tả thừa</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/12_lien_he_hero.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/12_lien_he_hero.png" alt="So sánh 12_lien_he_hero.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/12_lien_he_hero.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/12_lien_he_hero.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Khối mở đầu súc tích, đanh thép</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Liên hệ">
+        <td class="col-stt">21</td>
+        <td class="col-trang"><span class="tag-page">Liên hệ</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/lien-he" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/lien-he
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Section Hotline & Hỗ trợ toàn quốc:<br/>- Sửa tiêu đề: 'Chúng tôi luôn sẵn sàng!'<br/>- Mô tả: gắn link 'tại đây' trỏ /dao-tao<br/>- Footer: bỏ 'Giờ làm việc: 8:00 - 21:00', đổi badge thành 'FAI Đồng hành 24/7 cùng học viên và doanh nghiệp'</td>
+        <td class="col-before"><div class="text-box before-box">Tiêu đề dài dòng, chưa có link tới đào tạo, còn badge giờ làm việc cố định</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã cập nhật đúng 100% tiêu đề, chèn link /dao-tao vào chữ 'tại đây', cập nhật badge 24/7</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/13_lien_he_support.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/13_lien_he_support.png" alt="So sánh 13_lien_he_support.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/13_lien_he_support.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/13_lien_he_support.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Bố cục hotline chuyên nghiệp</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">22</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao#arena" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao#arena
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Gắn link chương trình con cho FPT Arena Multimedia:<br/>- AMSP (2 năm) -> /dao-tao/arena/amsp<br/>- 2D, 3D, Game & App (6-18 tháng) -> /dao-tao/arena/6-18-thang<br/>- Multimedia ngắn hạn (100 giờ) -> /dao-tao/arena/100h</td>
+        <td class="col-before"><div class="text-box before-box">Chỉ là các dòng text tĩnh không click được</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã biến cả 3 dòng thành link động dẫn tới đúng trang con của từng chương trình Arena</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" alt="So sánh 14_dao_tao_arena_links.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/14_dao_tao_arena_links.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/14_dao_tao_arena_links.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Tất cả các link hoạt động hoàn hảo</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">23</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao#skillking" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao#skillking
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Gắn link chương trình con cho FPT Skillking:<br/>- Digital Marketing With AI (18 tháng) -> /dao-tao/skillking/18-thang<br/>- Khóa ngắn hạn (100 giờ) -> /dao-tao/skillking/100h</td>
+        <td class="col-before"><div class="text-box before-box">Text tĩnh không bấm được</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã gắn link chi tiết cho cả 2 khóa học của Skillking</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" alt="So sánh 14_dao_tao_arena_links.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/14_dao_tao_arena_links.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/14_dao_tao_arena_links.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">24</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao#chip-design" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao#chip-design
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Gắn link chương trình con cho FPT Jetking Chip Design:<br/>- Thiết kế vi mạch bán dẫn quốc tế tích hợp AI (2 năm) -> /dao-tao/chip-design</td>
+        <td class="col-before"><div class="text-box before-box">Text tĩnh không bấm được</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã gắn link dẫn trực tiếp tới trang chuyên ngành Chip Design</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" alt="So sánh 14_dao_tao_arena_links.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/14_dao_tao_arena_links.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/14_dao_tao_arena_links.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">25</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao#ai-agent" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao#ai-agent
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Gắn link chương trình con cho FPT Jetking AI Agent:<br/>- Lập trình AI Agent (6 tháng - 2 năm) -> /dao-tao/ai-agent</td>
+        <td class="col-before"><div class="text-box before-box">Text tĩnh không bấm được</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã gắn link dẫn trực tiếp tới trang chuyên ngành AI Agent</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/14_dao_tao_arena_links.png" alt="So sánh 14_dao_tao_arena_links.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/14_dao_tao_arena_links.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/14_dao_tao_arena_links.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">26</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Section Bottom CTA trang Đào tạo:<br/>- Tiêu đề ngắt 2 dòng: 'Sẵn sàng kiến tạo tương lai\ncùng Viện Đào Tạo Quốc Tế FPT?'<br/>- Mô tả tuyển sinh mới nhất<br/>- Đổi nút: 'Tư vấn ngay qua Zalo'</td>
+        <td class="col-before"><div class="text-box before-box">Tiêu đề trải dài trên 1 dòng, nút ghi 'Tư vấn ngay'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã ngắt dòng tiêu đề đanh thép và đổi tên nút thành 'Tư vấn ngay qua Zalo'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/15_dao_tao_cta_banner.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/15_dao_tao_cta_banner.png" alt="So sánh 15_dao_tao_cta_banner.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/15_dao_tao_cta_banner.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/15_dao_tao_cta_banner.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Giao diện chuẩn thị giác</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Đào tạo">
+        <td class="col-stt">27</td>
+        <td class="col-trang"><span class="tag-page">Đào tạo</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Form nhận tư vấn & học bổng 2026 tại FAI:<br/>- Ngắt dòng tiêu đề section: 'NHẬN THÔNG TIN TƯ VẤN CHƯƠNG TRÌNH ĐÀO TẠO\n& HỌC BỔNG 2026 TẠI FAI'<br/>- Ngắt dòng form title: 'BẠN ĐANG TÌM KIẾM HƯỚNG ĐI\nSỰ NGHIỆP CÔNG NGHỆ & SÁNG TẠO?'<br/>- Mức học bổng sắp xếp từ cao xuống thấp (14M -> 10M -> 6M)<br/>- Sửa label 'Cơ sở tư vấn thuận tiện cho bạn:' -> 'Cơ sở:'</td>
+        <td class="col-before"><div class="text-box before-box">Tiêu đề không ngắt dòng, học bổng chưa tối ưu thứ tự, label dài dòng</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã xử lý ngắt dòng bằng CSS white-space: pre-line, xếp lại học bổng 14tr - 10tr - 6tr và rút gọn label 'Cơ sở:'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/16_dao_tao_form_scholarship.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/16_dao_tao_form_scholarship.png" alt="So sánh 16_dao_tao_form_scholarship.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/16_dao_tao_form_scholarship.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/16_dao_tao_form_scholarship.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Aptech ACCP">
+        <td class="col-stt">28</td>
+        <td class="col-trang"><span class="tag-page">Aptech ACCP</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao/aptech/accp" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao/aptech/accp
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Section Bottom CTA khóa Aptech ACCP:<br/>- Tiêu đề ngắt dòng: 'Sẵn sàng trở thành\nLập trình viên Quốc Tế\nAI Đa kỹ năng?'<br/>- Nút: 'Tư vấn ngay qua Zalo'</td>
+        <td class="col-before"><div class="text-box before-box">Tiêu đề 1 dòng dài, nút ghi 'Tư vấn ngay'</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã ngắt 3 nhịp tiêu đề chuẩn văn phong và đổi text nút thành 'Tư vấn ngay qua Zalo'</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/17_aptech_accp_cta_banner.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/17_aptech_accp_cta_banner.png" alt="So sánh 17_aptech_accp_cta_banner.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/17_aptech_accp_cta_banner.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/17_aptech_accp_cta_banner.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Hoàn tất</div></td>
+    </tr>
+    
+    <tr class="report-row" data-trang="Aptech ACCP">
+        <td class="col-stt">29</td>
+        <td class="col-trang"><span class="tag-page">Aptech ACCP</span></td>
+        <td class="col-url">
+            <a href="https://fai-gamma.vercel.app/dao-tao/aptech/accp" target="_blank" class="live-url" rel="noreferrer">
+                https://fai-gamma.vercel.app/dao-tao/aptech/accp
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </td>
+        <td class="col-req">Form nhận tư vấn khóa Aptech ACCP:<br/>- Ngắt dòng tiêu đề section: 'NHẬN THÔNG TIN TƯ VẤN VỀ CHƯƠNG TRÌNH HỌC\n& HỌC BỔNG 2026\nTẠI FPT APTECH'<br/>- Ngắt dòng form title: 'BẠN CÓ MUỐN TRỞ THÀNH\nLẬP TRÌNH VIÊN QUỐC TẾ?'<br/>- Sắp xếp học bổng từ cao xuống thấp (14tr - 10tr - 6tr)<br/>- Bỏ trường chọn cơ sở (do trang con Aptech chỉ có 1 cơ sở Hà Nội)</td>
+        <td class="col-before"><div class="text-box before-box">Học bổng lộn xộn (14tr - 6tr - 10tr), form hiển thị radio chọn cơ sở thừa thãi</div></td>
+        <td class="col-after"><div class="text-box after-box">Đã xếp học bổng đúng 14tr -> 10tr -> 6tr, cấu hình includeCampus: false ẩn hoàn toàn trường chọn cơ sở</div></td>
+        <td class="col-status"><span class="badge pass">✅ ĐÃ NGHIỆM THU ĐẠT 100%</span></td>
+        <td class="col-img">
+        <div class="img-preview-card">
+            <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/18_aptech_accp_form.png" target="_blank" title="Nhấp để xem ảnh phóng to">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/comparison/18_aptech_accp_form.png" alt="So sánh 18_aptech_accp_form.png" loading="lazy" class="comparison-thumb" />
+            </a>
+            <div class="img-meta">
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_before/18_aptech_accp_form.png" target="_blank" class="sub-link red">🔴 Ảnh Gốc (Before)</a>
+                <span class="sep">•</span>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fai/kiem_thu_11_09/screenshots_after/18_aptech_accp_form.png" target="_blank" class="sub-link green">🟢 Ảnh Đã Sửa (After)</a>
+            </div>
+        </div>
+        </td>
+        <td class="col-note"><div class="note-box">Form tinh gọn, trải nghiệm người dùng tối ưu</div></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

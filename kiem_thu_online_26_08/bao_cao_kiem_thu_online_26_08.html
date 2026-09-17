@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Báo Cáo Nghiệm Thu Trực Tuyến - FAI 26/08</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f37021;
+      --navy: #0D2137;
+      --bg: #070d17;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1300px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, rgba(243,112,33,0.12) 0%, transparent 100%);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+    }
+    .badge-top {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(243,112,33,0.2);
+      color: #f37021;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 12px; }
+    p.lead { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; margin: 0 auto 20px; }
+    .live-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #f37021;
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .live-link-btn:hover { background: #e05e10; transform: translateY(-2px); }
+    .table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: #0f1c2e;
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 18px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 20px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      vertical-align: top;
+    }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .screenshot-thumb {
+      max-width: 240px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s;
+      cursor: pointer;
+      display: block;
+    }
+    .screenshot-thumb:hover { transform: scale(1.05); border-color: var(--primary); }
+    .url-link { color: #38bdf8; text-decoration: underline; font-weight: 600; font-size: 0.85rem; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge-top">Báo Cáo Nghiệm Thu Trực Tuyến</span>
+      <h1>Bảng Đối Soát 17 Lỗi Đã Sửa (Sheet 26/08)</h1>
+      <p class="lead">Tất cả 17 hạng mục đã được deploy hoàn chỉnh lên Vercel Production. Đối tác có thể xem đối soát trực tiếp theo từng ảnh chụp màn hình thực tế bên dưới hoặc click vào link tương ứng.</p>
+      <a href="https://fai-gamma.vercel.app" target="_blank" class="live-link-btn">
+        Truy cập Website Online (fai-gamma.vercel.app) &rarr;
+      </a>
+    </header>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 50px;">STT</th>
+            <th style="width: 140px;">Hạng Mục</th>
+            <th style="width: 220px;">URL Online</th>
+            <th style="width: 260px;">Yêu Cầu / Lỗi Ban Đầu</th>
+            <th>Kết Quả Xử Lý</th>
+            <th style="width: 130px;">Trạng Thái</th>
+            <th style="width: 260px;">Ảnh Thực Tế Online</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">1</td>
+            <td style="font-weight: 700;">Trang Chủ</td>
+            <td><a href="https://fai-gamma.vercel.app/" target="_blank" class="url-link">https://fai-gamma.vercel.app/</a></td>
+            <td style="color: #cbd5e1;">Sửa lỗi chính tả xuống dòng: Hệ thống đào tạo chuẩn quốc tế, uy tín tại Việt Nam</td>
+            <td style="color: #f8fafc;">Chỉnh sửa ngắt dòng chuẩn: "Hệ thống đào tạo chuẩn quốc tế,
+uy tín tại Việt Nam". Hiển thị cân đối 2 dòng, không gãy chữ.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/01_trang_chu_bold_cta.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/01_trang_chu_bold_cta.png" alt="Trang Chủ" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">2</td>
+            <td style="font-weight: 700;">Trang Đào Tạo</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao#chip-design" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao#chip-design</a></td>
+            <td style="color: #cbd5e1;">FPT JETKING CHIP DESIGN => ko xuống dòng</td>
+            <td style="color: #f8fafc;">Đã bọc nowrap cho toàn bộ cụm tiêu đề FPT JETKING CHIP DESIGN và điều chỉnh font co giãn theo viewport, không bị rớt chữ DESIGN.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/02_dao_tao_chip_design_title.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/02_dao_tao_chip_design_title.png" alt="Trang Đào Tạo" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">3</td>
+            <td style="font-weight: 700;">Trang Đào Tạo</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao</a></td>
+            <td style="color: #cbd5e1;">Chữ bị mờ ẩn mất => fix</td>
+            <td style="color: #f8fafc;">Tích hợp IntersectionObserver kích hoạt class .revealed cho toàn bộ các phần tử data-reveal. Toàn bộ chữ hiển thị sắc nét 100%.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/03_dao_tao_reveal_text.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/03_dao_tao_reveal_text.png" alt="Trang Đào Tạo" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">4</td>
+            <td style="font-weight: 700;">Trang Đào Tạo</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao#dang-ky-hoc-bong" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao#dang-ky-hoc-bong</a></td>
+            <td style="color: #cbd5e1;">Sửa form: Bỏ TP Hồ Chí Minh và Cần Thơ; Bổ sung "Bạn đang quan tâm đến chương trình nào tại Viện đào tạo Quốc tế FPT"</td>
+            <td style="color: #f8fafc;">Form chỉ còn 2 cơ sở: Hà Nội & Đà Nẵng. Trường chọn khóa học hiển thị tiêu đề chuẩn: "Bạn đang quan tâm đến chương trình nào tại Viện đào tạo Quốc tế FPT".</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/04_dao_tao_form_registration.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/04_dao_tao_form_registration.png" alt="Trang Đào Tạo" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">5</td>
+            <td style="font-weight: 700;">Trang Liên Hệ</td>
+            <td><a href="https://fai-gamma.vercel.app/lien-he" target="_blank" class="url-link">https://fai-gamma.vercel.app/lien-he</a></td>
+            <td style="color: #cbd5e1;">Sửa mô tả banner: "kết nối trực tiếp với cơ sở gần nhất"</td>
+            <td style="color: #f8fafc;">Banner cập nhật đúng nguyên văn: "Chào mừng bạn đến với Viện Đào Tạo Quốc Tế FPT. Lựa chọn ngành học của bạn và kết nối trực tiếp với cơ sở gần nhất để trải nghiệm không gian học tập chuẩn quốc tế."</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/05_lien_he_hero_banner.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/05_lien_he_hero_banner.png" alt="Trang Liên Hệ" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">6</td>
+            <td style="font-weight: 700;">Trang Liên Hệ - Aptech</td>
+            <td><a href="https://fai-gamma.vercel.app/lien-he#aptech" target="_blank" class="url-link">https://fai-gamma.vercel.app/lien-he#aptech</a></td>
+            <td style="color: #cbd5e1;">Sửa đúng màu cam (#f37021), tiêu đề LẬP TRÌNH VIÊN QUỐC TẾ (ko xuống dòng), link aptech.fpt.edu.vn, cơ sở HN & HCM kèm Hotline 0833 999 810 / 0834 999 810</td>
+            <td style="color: #f8fafc;">Màu cam thương hiệu #f37021, link https://aptech.fpt.edu.vn/, tiêu đề nowrap, 4 cơ sở: Xuân Phương & Cầu Giấy (HN - 0833 999 810), Tân Sơn Nhất & Hạnh Thông (HCM - 0834 999 810).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/06_lien_he_aptech.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/06_lien_he_aptech.png" alt="Trang Liên Hệ - Aptech" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">7</td>
+            <td style="font-weight: 700;">Trang Liên Hệ - Arena</td>
+            <td><a href="https://fai-gamma.vercel.app/lien-he#arena" target="_blank" class="url-link">https://fai-gamma.vercel.app/lien-he#arena</a></td>
+            <td style="color: #cbd5e1;">Sửa đúng màu vàng cam (#d97706), tiêu đề THIẾT KẾ MỸ THUẬT ĐA PHƯƠNG TIỆN, link arena.fpt.edu.vn, 7 cơ sở (HN, ĐN, HCM, Cần Thơ) kèm hotline</td>
+            <td style="color: #f8fafc;">Màu nhận diện #d97706, link https://arena.fpt.edu.vn/, 7 cơ sở chuẩn toàn quốc: Ba Đình, Hai Bà Trưng, Xuân Phương (024 7300 8855), Hải Châu (0236 730 8826), TSN & Hạnh Thông (028 7300 8866), Cái Khế (0292 730 8806).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/07_lien_he_arena.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/07_lien_he_arena.png" alt="Trang Liên Hệ - Arena" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">8</td>
+            <td style="font-weight: 700;">Trang Liên Hệ - Skillking</td>
+            <td><a href="https://fai-gamma.vercel.app/lien-he#skillking" target="_blank" class="url-link">https://fai-gamma.vercel.app/lien-he#skillking</a></td>
+            <td style="color: #cbd5e1;">Sửa đúng màu xanh dương (#29a9e1), tiêu đề DIGITAL MARKETING ỨNG DỤNG AI, link skillking.fpt.edu.vn, 6 cơ sở kèm hotline</td>
+            <td style="color: #f8fafc;">Màu xanh #29a9e1, link https://skillking.fpt.edu.vn/, 6 cơ sở: Hai Bà Trưng & Xuân Phương (024 7300 8855), Hải Châu (0236 730 8826), TSN & Hạnh Thông (028 7300 8866), Cái Khế (0292 730 8806).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/08_lien_he_skillking.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/08_lien_he_skillking.png" alt="Trang Liên Hệ - Skillking" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">9</td>
+            <td style="font-weight: 700;">Trang Liên Hệ - Jetking</td>
+            <td><a href="https://fai-gamma.vercel.app/lien-he#jetking" target="_blank" class="url-link">https://fai-gamma.vercel.app/lien-he#jetking</a></td>
+            <td style="color: #cbd5e1;">Bổ sung khối FPT Jetking: Màu đỏ (#dc2626), tiêu đề CHIP DESIGN VÀ AI AGENT, link jetking.fpt.edu.vn, 4 cơ sở (HN, ĐN, HCM) kèm hotline</td>
+            <td style="color: #f8fafc;">Thêm mới khối FPT Jetking màu đỏ #dc2626, link https://jetking.fpt.edu.vn/, 4 cơ sở: Xuân Phương (0833 999 810), Hải Châu (0941 173 530), Hạnh Thông & TSN (0834 999 810).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/09_lien_he_jetking.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/09_lien_he_jetking.png" alt="Trang Liên Hệ - Jetking" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">10</td>
+            <td style="font-weight: 700;">FPT Aptech 100-200h</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/aptech/100-200h#dang-ky-hoc-bong" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/aptech/100-200h#dang-ky-hoc-bong</a></td>
+            <td style="color: #cbd5e1;">Bên trái: 2 Triệu (Tân Binh Sáng Tạo), VIP (Coursera + Udemy); Bên phải: Bỏ HCM/Cần Thơ, label "Bạn đang quan tâm khoá học ngắn hạn nào tại FPT Aptech"</td>
+            <td style="color: #f8fafc;">Cột trái hiển thị 2 badge: 2 Triệu (Học bổng Tân Binh Sáng Tạo) + VIP (Coursera + Udemy). Form chỉ còn Hà Nội, Đà Nẵng kèm tiêu đề chọn khóa học chuẩn.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/10_aptech_100_200h.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/10_aptech_100_200h.png" alt="FPT Aptech 100-200h" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">11</td>
+            <td style="font-weight: 700;">FPT Aptech 1 Năm</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/aptech/1-nam#dang-ky-hoc-bong" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/aptech/1-nam#dang-ky-hoc-bong</a></td>
+            <td style="color: #cbd5e1;">Form: Bỏ cơ sở Hồ Chí Minh và Cần Thơ</td>
+            <td style="color: #f8fafc;">Form chỉ còn 2 lựa chọn cơ sở: Hà Nội & Đà Nẵng.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/11_aptech_1_nam.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/11_aptech_1_nam.png" alt="FPT Aptech 1 Năm" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">12</td>
+            <td style="font-weight: 700;">FPT Aptech 6 Tháng</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/aptech/6-thang#dang-ky-hoc-bong" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/aptech/6-thang#dang-ky-hoc-bong</a></td>
+            <td style="color: #cbd5e1;">Form: Bỏ cơ sở Hồ Chí Minh và Cần Thơ</td>
+            <td style="color: #f8fafc;">Form chỉ còn 2 lựa chọn cơ sở: Hà Nội & Đà Nẵng.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/12_aptech_6_thang.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/12_aptech_6_thang.png" alt="FPT Aptech 6 Tháng" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">13</td>
+            <td style="font-weight: 700;">FPT Arena 100 Giờ</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/arena/100h#dang-ky-arena-100h" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/arena/100h#dang-ky-arena-100h</a></td>
+            <td style="color: #cbd5e1;">Bên trái: 1.5-2M (Tân binh sáng tạo), VIP, 0đ Công cụ; Form: Thêm "Bạn đang quan tâm khoá học ngắn hạn nào tại FPT Arena Multimedia"</td>
+            <td style="color: #f8fafc;">Cột trái: 3 badge (1.5-2M ĐN/HN, VIP Coursera+Udemy, Zero chi phí công cụ). Form: Label "Bạn đang quan tâm khoá học ngắn hạn nào tại FPT Arena Multimedia".</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/13_arena_100h.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/13_arena_100h.png" alt="FPT Arena 100 Giờ" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">14</td>
+            <td style="font-weight: 700;">FPT Skillking 100 Giờ</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/skillking/100h#dang-ky-skillking-100h" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/skillking/100h#dang-ky-skillking-100h</a></td>
+            <td style="color: #cbd5e1;">Bên trái: 1.5 Triệu (Học bổng Short Course), VIP; Bên phải: Thêm "Bạn đang quan tâm khoá học ngắn hạn nào tại FPT Skillking"</td>
+            <td style="color: #f8fafc;">Cột trái: 2 badge (1.5 Triệu Short Course, VIP Coursera+Udemy). Form: Label "Bạn đang quan tâm khoá học ngắn hạn nào tại FPT Skillking".</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/14_skillking_100h.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/14_skillking_100h.png" alt="FPT Skillking 100 Giờ" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">15</td>
+            <td style="font-weight: 700;">FPT Jetking Chip Design</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/chip-design#dang-ky-chip-design" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/chip-design#dang-ky-chip-design</a></td>
+            <td style="color: #cbd5e1;">Bên trái: 8 Triệu (Kỹ sư Bán dẫn Tương lai), VIP, LAB (Thực hành LAB EDA Synopsys & Cadence)</td>
+            <td style="color: #f8fafc;">Cột trái hiển thị 3 badge: 8 Triệu (Học bổng Kỹ sư Bán dẫn Tương lai), VIP (Coursera + Udemy), LAB EDA Synopsys & Cadence chuẩn quốc tế.</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/15_chip_design.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/15_chip_design.png" alt="FPT Jetking Chip Design" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">16</td>
+            <td style="font-weight: 700;">FPT Jetking AI Agent</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/ai-agent" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/ai-agent</a></td>
+            <td style="color: #cbd5e1;">Màu thương hiệu: Toàn bộ text màu cam chuyển sang màu đỏ Jetking (#dc2626)</td>
+            <td style="color: #f8fafc;">Toàn bộ nhận diện màu sắc trên trang (icon, tiêu đề, button, badge) đã chuyển từ màu cam sang sắc đỏ đặc trưng Jetking (#dc2626 / #b91c1c).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/16_ai_agent_red_theme.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/16_ai_agent_red_theme.png" alt="FPT Jetking AI Agent" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: 800; text-align: center; color: var(--primary);">17</td>
+            <td style="font-weight: 700;">FPT Jetking AI Agent - Form</td>
+            <td><a href="https://fai-gamma.vercel.app/dao-tao/ai-agent#dang-ky-ai-agent" target="_blank" class="url-link">https://fai-gamma.vercel.app/dao-tao/ai-agent#dang-ky-ai-agent</a></td>
+            <td style="color: #cbd5e1;">Bên trái: 8 Triệu (Tiên phong AI Agent), VIP (Coursera + Udemy)</td>
+            <td style="color: #f8fafc;">Cột trái: 2 badge chuẩn tông đỏ: 8 Triệu (Học bổng Tiên phong AI Agent) + VIP (Coursera + Udemy).</td>
+            <td><span class="status-badge">ĐÃ SỬA - 100% ĐẠT</span></td>
+            <td>
+              <a href="screenshots/17_ai_agent_form_badges.png" target="_blank" title="Click xem ảnh phóng to">
+                <img src="screenshots/17_ai_agent_form_badges.png" alt="FPT Jetking AI Agent - Form" class="screenshot-thumb" />
+              </a>
+            </td>
+          </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
