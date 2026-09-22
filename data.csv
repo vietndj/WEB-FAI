@@ -1,0 +1,439 @@
+,,,,,
+STT,Trang,URL,Nội dung,Sửa ,Ghi chú
+1,Trang chủ,https://fai-gamma.vercel.app/,,CTA => Click ra https://fai-gamma.vercel.app/tuyen-sinh#dang-ky,Chuyển xuống mục form của trang tuyển sinh luôn
+,Trang chủ,https://fai-gamma.vercel.app/,,CTA => Click ra https://fai-gamma.vercel.app/tuyen-sinh#dang-ky,Chuyển xuống mục form của trang tuyển sinh luôn
+,Trang chủ,https://fai-gamma.vercel.app/,,Link liên hệ sửa lại bấm vào dẫn ra trang https://fai-gamma.vercel.app/lien-he,Footer
+2,Tuyển sinh,https://fai-gamma.vercel.app/tuyen-sinh#dang-ky,,"XÉT TUYỂN TRỰC TIẾP
+Đăng ký xét tuyển trực tuyến 2026
+Điền thông tin bên dưới để giữ suất học bổng và nhận liên hệ hướng dẫn thủ tục nhập học.
+
+=> sửa thành: 
+HỖ TRỢ TƯ VẤN TUYỂN SINH
+Đăng ký nhận tư vấn trực tuyến 2026
+Điền thông tin bên dưới, tư vấn sẽ liên lạc hỗ trợ bạn về chương trình học và học bổng
+
+
+
+Họ và tên thí sinh  => Họ và tên
+Cơ sở đăng ký học tập => Cơ sở
+
+
+CTA: Gửi hồ sơ đăng ký xét tuyển 2026 => sửa thành ĐĂNG KÝ TƯ VẤN",
+3,Trang chủ,https://fai-gamma.vercel.app/,,"Thay banner của chip design 1 trong 3 ảnh sau:
+banner chip",
+4,Trang chủ,https://fai-gamma.vercel.app/,,CTA => Click ra https://fai-gamma.vercel.app/tuyen-sinh#dang-ky,Chuyển xuống mục form của trang tuyển sinh luôn
+5,Trang chủ,https://fai-gamma.vercel.app/,,"Đăng ký nhập học 2026 => sửa thành Đăng ký tư vấn 
+
+Click ra https://fai-gamma.vercel.app/tuyen-sinh#dang-ky",
+6,Trang chủ,https://fai-gamma.vercel.app/,,Cam kết đầu ra => Cam kết việc làm toàn diện,
+7,Trang chủ,https://fai-gamma.vercel.app/,,"Hiện tại đang bị giống nhau giữa 2 dòng đối tác tuyển dụng 
+=> anh fix lại sao cho 2 dòng này không trùng nhau, nghĩa là cái ở dòng trên xuất hiện rồi thì ko xuất hiện đồng thời ở dòng dưới => có thể tráo sao cho ko trùng lặp ấy ạ ",
+8,Trang chủ,https://fai-gamma.vercel.app/,,"CTA: Xem tất cả đối tác tuyển dụng => sửa thành Xem thêm kết nối doanh nghiệp và FAI
+
+
+Sửa click link sang trang https://fai-gamma.vercel.app/doi-song nhưng là section doanh nghiệp & FAI",
+9,Trang chủ,https://fai-gamma.vercel.app/,,"TRẢI NGHIỆM SINH VIÊN
+Trải nghiệm sinh viên FAI
+=> Sửa thành:
+TRẢI NGHIỆM FAI
+Trải nghiệm sinh viên
+
+
+Tại Viện đào tạo quốc tế FPT (FAI), sinh viên được trải nghiệm các sân chơi chuyên ngành, ngày hội công nghệ, sự kiện sáng tạo và chương trình kết nối doanh nghiệp, từ đó phát triển kỹ năng thực tế, khám phá cơ hội nghề nghiệp ngay từ năm nhất. 
+
+=> Sửa thành:
+Tại Viện đào tạo quốc tế FPT (FAI), sinh viên được trải nghiệm các sân chơi chuyên ngành, ngày hội công nghệ, sự kiện sáng tạo và chương trình kết nối doanh nghiệp, từ đó phát triển kỹ năng thực tế, khám phá cơ hội nghề nghiệp ngay từ học kỳ đầu tiên
+
+
+
+",
+10,Trang chủ,https://fai-gamma.vercel.app/,,"Sân chơi chuyên ngành
+Hoạt động doanh nghiệp
+Trải nghiệm sinh viên
+=> Sửa thành 
+Sân chơi chuyên ngành
+Hoạt động doanh nghiệp
+Kết nối việc làm",
+11,Trang chủ,https://fai-gamma.vercel.app/,,"Bỏ text trong ảnh, thay ảnh bằng 4 ảnh tại file dưới đây: (updating)",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,"Sửa tên 5 menu con
+
+Giới thiệu chung => section 1
+Đội ngũ giảng viên => sửa thành Sứ mệnh và tầm nhìn => section 3 
+Thành tựu & con số => sửa thành Hành trình phát triển => Section 4 *hành trình phát triển""
+Hệ thống campus toàn quốc => sửa thành Chương trình đào tạo => section 5 ""mạng lưới đào tạo""
+Đối tác doanh nghiệp => sửa thành Hợp tác doanh nghiệp => Section màu cam cuối cùng",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,"98% Sinh viên có việc làm ngay sau khi tốt nghiệp
+
+=> sửa lại thành 97% Sinh viên có việc làm trước khi tốt nghiệp",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,"Chuyển sang dạng hiển thị dọc giữ nguyên thiết kế
+
+Số 1 dọc bên trái  - cột mốc ở bên phải - tương tự hiện tại click vào năm nào thì hiển thị cột mốc tương ứng",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,"MẠNG LƯỚI ĐÀO TẠO => CHƯƠNG TRÌNH ĐÀO TẠO
+
+
+Các chương trình đào tạo => Hệ thống chương trình chuẩn Quốc tế
+
+Bỏ các tên chương trình chỉ giữ lại logo của 4 sản phẩm
+
+
+Bổ sung CTA => ""Khám phá chương trình đào tạo"" - Click chuột ra trang https://fai-gamma.vercel.app/dao-tao",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,"CTA Hợp tác doanh nghiệp => Sửa lại thành "" Liên hệ với FAI """,
+,Liên hệ,https://fai-gamma.vercel.app/lien-he,,"MẠNG LƯỚI KẾT NỐI FAI => Sửa thành KẾT NỐI VỚI FAI
+
+
+Bỏ đoạn text ""Chào mừng ....""",
+,Liên hệ,https://fai-gamma.vercel.app/lien-he,,"Chúng tôi luôn sẵn sàng hỗ trợ => sửa thành Chúng tôi luôn sẵn sàng!
+
+
+Thời gian làm việc từ 8:00 - 21:00 hàng ngày, kể cả Thứ 7 và Chủ Nhật. Liên hệ ngay để được hỗ trợ thủ tục nhập học và tư vấn hướng nghiệp miễn phí.
+
+Sửa thành 
+=> Thời gian làm việc từ 8:00 - 21:00 hàng ngày, kể cả Thứ 7 và Chủ Nhật. Liên hệ ngay để được hỗ trợ trực tuyến. Để xem thêm thông tin chương trình đào tạo tại đây - ""tại đây"" đặt link https://fai-gamma.vercel.app/dao-tao
+
+
+Đồng hành cùng học viên 24/7 => FAI Đồng hành 24/7 cùng học viên và doanh nghiệp
+Giờ làm việc: 8:00 - 21:00 => bỏ
+ ",
+,Về FAI,https://fai-gamma.vercel.app/ve-fai,,Sửa lại click ra form trong trang tuyển sinh https://fai-gamma.vercel.app/tuyen-sinh#dang-ky,
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"Sửa lại tất cả link con đang không bấm được của các sản phẩm FAN, FSK, FJK Chip, FJK AI Agent là link khoá học tương ứng",
+,,,,,
+,,,,,
+,,,,,
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"Đăng ký nhận tư vấn hướng nghiệp 1-1 và thông tin học bổng mới nhất từ các khối ngành đào tạo FAI
+
+=> sửa thành Đăng ký nhận tư vấn 1-1 và thông tin tuyển sinh mới nhất từ các chương trình đào tạo FAI
+
+CTA: Tư vấn ngay => sửa thành ""Tư vấn ngay qua Zalo""",
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"Sẵn sàng 
+kiến tạo tương lai 
+cùng Viện Đào Tạo 
+Quốc Tế FPT?",sửa lại xuống dòng
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"NHẬN THÔNG TIN TƯ VẤN CHƯƠNG TRÌNH ĐÀO TẠO & HỌC BỔNG 2026 TẠI FAI
+
+=> sửa thành
+NHẬN THÔNG TIN TƯ VẤN 
+CHƯƠNG TRÌNH ĐÀO TẠO & HỌC BỔNG 2026 
+",
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"14 Triệu Học bổng tài năng
+Dành cho thí sinh đạt kết quả cao trong kỳ thi đánh giá năng lực
+
+10 Triệu Khuyến khích nhập học sớm 
+Ưu đãi dành cho học viên hoàn tất thủ tục nhập học sớm 2026
+
+6 Triệu Ưu đãi Chuyển ngành 
+Dành riêng cho sinh viên ngoài ngành muốn học nghề công nghệ và sáng tạo
+
+","Phần học bổng bên trái
+để số học bổng theo thứ tự từ cao xuống thấp"
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,,"BẠN ĐANG TÌM KIẾM HƯỚNG ĐI SỰ NGHIỆP CÔNG NGHỆ & SÁNG TẠO?
+Đăng ký nhận tư vấn hướng nghiệp 1-1 và lộ trình đào tạo chuẩn quốc tế
+
+=> sửa lỗi xuống dòng
+BẠN ĐANG TÌM KIẾM HƯỚNG ĐI 
+SỰ NGHIỆP CÔNG NGHỆ & SÁNG TẠO?
+Đăng ký nhận tư vấn 1-1 và lộ trình đào tạo chuẩn quốc tế
+
+
+
+",
+,Chương trình đào tạo,https://fai-gamma.vercel.app/dao-tao,Nội dung form,"Cơ sở tư vấn thuận tiện cho bạn 
+=> Cơ sở 
+",
+,aptech,https://fai-gamma.vercel.app/dao-tao/aptech/accp,,"Sẵn sàng trở thành Lập trình viên AI Đa kỹ năng?
+=> Sửa lại thành 
+Sẵn sàng trở thành 
+Lập trình viên Quốc Tế
+AI Đa kỹ năng?
+
+CTA Tư vấn ngay => ""Tư vấn ngay qua Zalo""",
+,aptech,https://fai-gamma.vercel.app/dao-tao/aptech/accp,,"NHẬN THÔNG TIN TƯ VẤN VỀ CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026 TẠI FPT APTECH
+
+=> sửa lỗi xuống dòng
+NHẬN THÔNG TIN TƯ VẤN VỀ CHƯƠNG TRÌNH HỌC 
+& HỌC BỔNG 2026 TẠI FPT APTECH
+
+
+
+Mức học bổng bên trái sửa lại thứ tự từ cao xuống thấp
+
+Form bỏ trường chọn cơ sở ",
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,Trag,URL,Lỗi,Sửa ,Note
+,"Trang chủ
+
+(Ảnh hoạt động)",https://fai-gamma.vercel.app/,,FAI-All-Star-Cup-season-2-2.jpg,"- Thay ảnh anh Thành bằng giải bóng đá
+- Anh Thành sang trái ngoài cùng 
+- giữ ảnh tốt nghiệp 
+- ảnh ngang dài nhất chưa tìm được"
+,Lập trình Backend 1 năm,https://fai-gamma.vercel.app/dao-tao/aptech/1-nam,,"Sửa lỗi xuống dòng:
+Sẵn sàng trở thành
+Lập trình viên Backend
+Chuyên nghiệp",
+,Lập trình Backend 1 năm,https://fai-gamma.vercel.app/dao-tao/aptech/1-nam,,"CTA Tư vấn ngay => ""Tư vấn ngay qua Zalo"" - https://zalo.me/fptaptech",
+,Lập trình Backend 1 năm,https://fai-gamma.vercel.app/dao-tao/aptech/1-nam,,"Sửa lỗi xuống dòng 
+NHẬN THÔNG TIN TƯ VẤN 
+VỀ  CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026
+TẠI FPT APTECH
+
+
+",sửa cả lỗi xuống dòng 
+,Lập trình Backend 1 năm,https://fai-gamma.vercel.app/dao-tao/aptech/1-nam,,"BẠN CÓ MUỐN TRỞ THÀNH CHUYÊN GIA LẬP TRÌNH BACKEND?
+
+=> Sửa thành: 
+BẠN CÓ MUỐN TRỞ THÀNH 
+CHUYÊNN VIÊN LẬP TRÌNH BACKEND?
+",form
+,Lập trình 6 tháng,https://fai-gamma.vercel.app/dao-tao/aptech/6-thang,,"Sửa lỗi chính tả
+CHƯƠNG TRÌNH ĐÀO TẠO LẬP TRÌNH FRONTEND 6 THÁNG
+TÍCH HỢP TRÍ TUỆ NHÂN TẠO (AI)
+
+",Từ 3 dòng xuống còn 2 dòng
+,tất cả các trang lập trình,https://fai-gamma.vercel.app/dao-tao/aptech/6-thang,,"Căn lại mô tả sao cho bằng với điểm khác biệt cốt lõi và không để dòng dài dòng ngắn
+=> căn vuông ",
+,Lập trình 6 tháng,https://fai-gamma.vercel.app/dao-tao/aptech/6-thang,,"Sửa lỗi xuống dòng:
+Sẵn sàng trở thành
+Chuyên viên 
+Lập trình Front-end?
+
+Đăng ký nhận tư vấn lộ trình học 6 tháng và thông tin học bổng mới nhất từ FPT Aptech ( ko bị xuống dòng như hiện tại )
+
+CTA Tư vấn ngay => ""Tư vấn ngay qua Zalo"" - https://zalo.me/fptaptech
+",
+,Lập trình 6 tháng,https://fai-gamma.vercel.app/dao-tao/aptech/6-thang,,"Sửa lỗi xuống dòng 
+NHẬN THÔNG TIN TƯ VẤN 
+VỀ  CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026
+TẠI FPT APTECH
+
+
+",
+,Lập trình 6 tháng,https://fai-gamma.vercel.app/dao-tao/aptech/6-thang,,"BẠN CÓ MUỐN TRỞ THÀNH CHUYÊN GIA LẬP TRÌNH BACKEND?
+
+=> Sửa thành: BẠN CÓ MUỐN TRỞ THÀNH
+ CHUYÊN VIÊN LẬP TRÌNH FRONT-END?
+",sửa cả lỗi xuống dòng 
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"KIẾN TẠO LỘ TRÌNH CỦA RIÊNG BẠN
+
+=> Sửa thành: ĐIỂM KHÁC BIỆT CỐT LÕI 
+
+Mô tả: Kiến tạo lộ trình của riêng bạn, đi từ giao diện trực quan lên logic phức tạp. Đầu ra: Lập trình viên Full-Stack Web & AI vững chắc tư duy và công cụ thực chiến.
+
+
+",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"Chứng chỉ chuyên môn Aptech
+
+
+=> Sửa thành Chứng chỉ chuyên môn Aptech Global",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"Bổ sung thêm khoá 3 (200h) ở tab thứ 3 và căn chỉnh lại xuống dòng sao cho hợp lý 
+
+Nội dung khoá 3: Ảnh màn hình 2026-09-15 lúc 14.17.00.png",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"Chứng chỉ chuyên ngành FPT Aptech
+
+=> Chứng chỉ Quốc tế Aptech Global
+",Tại sao nên chọn FPT Aptech
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"Đón đầu xu hướng việc làm FPT
+Được hỗ trợ kết nối phỏng vấn tuyển dụng tại hệ sinh thái FPT và hơn 300+ đối tác công nghệ.
+
+
+Sửa thành: 
+
+2 Hình thức học linh hoạt
+Online hoặc Offline tại cơ sở Hà Nội ",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"CTA Tư vấn ngay => ""Tư vấn ngay qua Zalo"" - https://zalo.me/fptaptech",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"NHẬN THÔNG TIN TƯ VẤN BỘ KHÓA HỌC LẬP TRÌNH NGẮN HẠN TẠI FPT APTECH (100 - 200 GIỜ)
+
+
+Sửa lỗi xuống dòng: 
+NHẬN THÔNG TIN TƯ VẤN BỘ KHÓA HỌC 
+LẬP TRÌNH NGẮN HẠN TẠI FPT APTECH (100 - 200 GIỜ)
+",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"ĐĂNG KÝ TƯ VẤN KHÓA HỌC LẬP TRÌNH NGẮN HẠN
+
+
+=> Sửa lỗi xuống dòng:
+ĐĂNG KÝ TƯ VẤN 
+KHÓA HỌC LẬP TRÌNH NGẮN HẠN
+",
+,Ngắn hạn,https://fai-gamma.vercel.app/dao-tao/aptech/100-200h,,"ReactJS & AI Smart UI: Frontend, BA, Tester với AI (100h)
+AI Multi-skill Backend : Backend, Automation Test, DevOps với AI (100h)
+Web & AI Multi-skill Developer (200h) ",trường lựa chọn khoá học
+,FAN (AMSP),https://fai-gamma.vercel.app/dao-tao/arena/amsp,,"Học thuyết Kiến tạo (Constructivism)
+
+=> sửa lỗi xuống dòng 
+Học thuyết Kiến tạo
+(Constructivism)
+",
+,FAN (AMSP),https://fai-gamma.vercel.app/dao-tao/arena/amsp,,"Sẵn sàng trở thành Chuyên gia Mỹ thuật Đa phương tiện?
+
+=> sửa lỗi xuống dòng 
+Sẵn sàng trở thành 
+Chuyên gia Mỹ thuật 
+Đa phương tiện?
+",
+,FAN (AMSP),https://fai-gamma.vercel.app/dao-tao/arena/amsp,,"Đăng ký nhận tư vấn lộ trình học cá nhân hóa và thông tin học bổng mới nhất từ FPT Arena Multimedia
+=> Sửa lỗi xuống dòng cho cùng 1 dòng thôi thay vì xuống dòng ""Arena Multimedia"" như hiện tại
+
+CTA: ""Tư vấn ngay"" => ""Tư vấn ngay qua Zalo"" https://zalo.me/fptarenaofficial
+",
+,FAN (AMSP),https://fai-gamma.vercel.app/dao-tao/arena/amsp,,"NHẬN THÔNG TIN TƯ VẤN VỀ CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026 TẠI FPT ARENA
+
+=> sửa lỗi xuống dòng
+NHẬN THÔNG TIN TƯ VẤN 
+VỀ CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026 
+TẠI FPT ARENA MULTIMEDIA
+",
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"FPT ARENA — CHUYÊN SÂU 6–18 THÁNG
+
+
+=> Sửa thành: FPT ARENA  - Khoá học 6-18 tháng",
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"Tại sao nên chọn khóa học chuyên sâu FPT Arena?
+
+
+=> Tại sao nên chọn khóa học 6-18 tháng tại FPT Arena?
+",
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"Bổ sung 
+22 năm tiên phong đào tạo Multimedia
+Đơn vị đầu tiên tại Việt Nam đào tạo Multimedia chuẩn quốc tế với hơn 20.000 cựu sinh viên thành danh.
+
+
+
+Chứng chỉ quốc tế Aptech => Chứng chỉ Quốc Tế
+
+Học thuyết Kiến tạo (Constructivism)
+Triết lý ""Làm khác để làm tốt"", sinh viên học tập chủ động qua đồ án thực tế.
+
+
+
+",sao cho thành 6 USP
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"Sẵn sàng bứt phá với đam mê Sáng tạo Đa phương tiện?
+
+=> sửa lỗi chính tả:
+Sẵn sàng bứt phá 
+với đam mê Sáng tạo 
+Đa phương tiện?
+
+Đăng ký nhận tư vấn lộ trình học chuyên sâu 6–18 tháng và thông tin học bổng mới nhất từ FPT Arena Multimedia
+=> Sửa thành: Đăng ký nhận tư vấn lộ trình học khoá 6–18 tháng và thông tin học bổng mới nhất từ FPT Arena Multimedia
+
+CTA: ""Tư vấn ngay"" => ""Tư vấn ngay qua Zalo"" https://zalo.me/fptarenaofficial",
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"NHẬN THÔNG TIN TƯ VẤN KHÓA HỌC CHUYÊN SÂU 6 - 18 THÁNG TẠI FPT ARENA
+
+sửa lỗi xuống dòng: 
+NHẬN THÔNG TIN TƯ VẤN 
+KHÓA HỌC  6 - 18 THÁNG TẠI FPT ARENA",
+,FAN 6 - 18 tháng,https://fai-gamma.vercel.app/dao-tao/arena/6-18-thang,,"Lựa chọn khoá học form sửa lại là:
+
+Thiết kế 2D/ 3D/ Animation/ Game/ App - 6 tháng
+Thiết kế 2D & 3D - 12 tháng 
+Thiết kế 2D, 3D & Animation - 18 tháng
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Chương trình huấn luyện 1-kèm-1, 80% thời lượng là thực hành trên các dự án thực tế giúp học viên hoàn thiện ngay sản phẩm Portfolio thương mại.
+
+
+=> sửa lại thành: Chương trình huấn luyện với 80% thời lượng là thực hành trên các dự án thực tế giúp học viên hoàn thiện ngay sản phẩm Portfolio thương mại.
+
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Tập trung 100% vào kỹ năng thực hành theo dự án thực tế.
+
+=> sửa thành: Tập trung thời lượng vào kỹ năng thực hành theo dự án thực tế.
+
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Huấn luyện 1-kèm-1, hoàn thiện sản phẩm thương mại ngay trong khóa
+
+=> Sửa thành: Hoàn thiện sản phẩm thương mại ngay trong khóa.
+
+
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Thiết Kế Thương Hiệu - Thương Mại
+
+=> sửa lỗi xuống dòng: 
+Thiết Kế 
+Thương Hiệu - Thương Mại
+
+
+Thiết Kế Đồ Họa 3D & Game
+
+=> sửa lỗi xuống dòng: 
+Thiết Kế 
+Đồ Họa 3D & Game
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Thực hành liên tục trong phòng Lab chuyên nghiệp cấu hình cao.
+=> Thực hành liên tục, hoàn thiện sản phẩm thương mại ngay trong khoá .
+
+Học phí trả góp 0%
+Hỗ trợ thanh toán linh hoạt giúp mọi bạn trẻ dễ dàng tiếp cận.
+
+=> Sửa lại là
+2 Hình thức học linh hoạt
+Online hoặc offline tại cơ sở Hà Nội và Đà Nẵng
+
+Bổ sung: 
+22 năm tiên phong đào tạo Multimedia (vị trí số 1)
+Đơn vị đầu tiên tại Việt Nam đào tạo Multimedia chuẩn quốc tế với hơn 20.000 cựu sinh viên thành danh.
+
+
+Giảng viên chuyên gia thực chiến
+100% giảng viên là Creative Director, Art Director và Lead 3D/VFX Artist trực tiếp dẫn dắt.",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"Đăng ký nhận tư vấn khóa học ngắn hạn và ưu đãi học phí lên tới 30% tại FPT Arena
+=> sửa thành: Đăng ký nhận tư vấn khóa học ngắn hạn và ưu đãi học phí tại FPT Arena Multimedia
+
+CTA: ""Tư vấn ngay"" => ""Tư vấn ngay qua Zalo"" https://zalo.me/fptarenaofficial",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"NHẬN THÔNG TIN TƯ VẤN KHÓA HỌC NGẮN HẠN 100H & HỌC BỔNG TẠI FPT ARENA
+
+=> sửa lỗi xuống dòng thành: 
+
+NHẬN THÔNG TIN TƯ VẤN 
+KHÓA HỌC NGẮN HẠN 100H & HỌC BỔNG 
+TẠI FPT ARENA MULTIMEDIA 
+",
+,FAN - 100H,https://fai-gamma.vercel.app/dao-tao/arena/100h,,"BẠN CÓ MUỐN BỨT PHÁ KỸ NĂNG MULTIMEDIA CẤP TỐC?
+
+=> sửa lỗi xuống dòng: 
+BẠN CÓ MUỐN BỨT PHÁ
+KỸ NĂNG MULTIMEDIA CẤP TỐC?
+",
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"Toàn bộ chữ màu này đổi sang đúng màu thương hiệu FSK, giống màu xanh banner ở dưới",
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"01
+
+Portfolio tự tin chinh phục nhà tuyển dụng",
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"Tất cả các màu xanh hiện tại đang bị tối, anh sửa lại cho thành màu xanh sáng hơn cho giống màu thương hiệu
+
+Full stack digital marketing
+=> Sửa thành: Full Stack Digital Marketing/ Multi-Channel Marketing Strategy
+",
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,Sửa thành => Full Stack Digital Marketing/ Multi-Channel Marketing Strategy,
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"Cam kết hỗ trợ việc làm FPT+
+Kết nối mạng lưới hàng trăm doanh nghiệp và agency marketing hàng đầu.
+
+=> Sửa thành 
+Kết nối hỗ trợ việc làm FPT+
+Mạng lưới hàng trăm doanh nghiệp và agency marketing hàng đầu.
+
+Bổ sung:
+Tiên phong đào tạo Digital Marketing (vị trí số 1)
+Đơn vị đầu tiên tại Việt Nam đào tạo Fullstack Digital Marketing chuẩn Quốc Tế.
+
+Giảng viên chuyên gia thực chiến
+100% giảng viên là CMO, Manager, Leader Marketing doanh nghiệp top đầu trực tiếp dẫn dắt.",6 USP
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"Sẵn sàng làm chủ Digital Marketing với AI?
+
+
+=> Sửa lỗi xuống dòng: 
+Sẵn sàng làm chủ 
+Digital Marketing với AI?
+
+
+CTA: ""Tư vấn ngay"" => ""Tư vấn ngay qua Zalo"" https://zalo.me/fptskillking
+",
+,FSK - 18 tháng,https://fai-gamma.vercel.app/dao-tao/skillking/18-thang,,"NHẬN THÔNG TIN TƯ VẤN VỀ CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026 TẠI FPT SKILLKING
+
+
+=> sửa lỗi xuống dòng: 
+NHẬN THÔNG TIN TƯ VẤN 
+VỀ CHƯƠNG TRÌNH HỌC & HỌC BỔNG 2026
+TẠI FPT SKILLKING
+",
